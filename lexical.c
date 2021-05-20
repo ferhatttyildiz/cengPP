@@ -93,13 +93,24 @@ int lex()
             return IDENT;
             break;
         case DIGIT:
-            //Write the required code when a digit is matched
+            addChar();
+            getChar();
+            while (charClass == DIGIT)
+            {
+                addChar();
+                getChar();
+            }
 
             return INT_LIT;
             break;
         case OPERATOR:
-            //Write the required code when an operator is matched
-
+            addChar();
+            getChar();
+            while (charClass == OPERATOR)
+            {
+                addChar();
+                getChar();
+            }
             return OPERATOR;
             break;
         case FINISHED:
